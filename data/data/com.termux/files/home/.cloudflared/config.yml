@@ -1,0 +1,16 @@
+tunnel: 769bd561-2a4c-40f6-ac8e-a00dbe7c3f88
+credentials-file: $CLOUDFLARED_CREDENTIALS_FILE_PATH
+origincert: $PRIVATE_KEY_PATH
+
+ingress:
+  - hostname: $DOMAIN
+    # service: http://127.0.0.1:80
+    service: http://localhost:80
+  - hostname: $DOMAIN
+    # service: http://127.0.0.1:443
+    service: http://localhost:443
+  - hostname: mail.$DOMAIN
+    # service: smtp://localhost:25
+  - hostname: imap.$DOMAIN
+    # service: imap://localhost:143
+  - service: http_status:404
